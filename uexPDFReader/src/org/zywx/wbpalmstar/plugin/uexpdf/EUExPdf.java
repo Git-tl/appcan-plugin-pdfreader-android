@@ -114,7 +114,11 @@ public class EUExPdf extends EUExBase {
 						"plugin_pdf_file_name_is_null");
 				return;
 			}
-
+			if(result == null) {
+				PdfUtils.showMsg((Activity) mContext,
+						"plugin_pdf_file_not_exists");
+				return;
+			}
 			final File f = new File(result);
 			if (!f.exists()) {
 				PdfUtils.showMsg((Activity) mContext,
